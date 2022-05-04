@@ -15,7 +15,7 @@ public class Main {
 		
 	
 		ManageService service = new ManageService();
-		
+		System.out.println("Test");
 	
 			try {
 				// Sender.sendMail("Wassup?");
