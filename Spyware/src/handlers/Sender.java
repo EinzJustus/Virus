@@ -1,5 +1,7 @@
 package handlers;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Properties;
 
 import javax.activation.DataHandler;
@@ -49,8 +51,21 @@ public class Sender {
 			
 			
 			BodyPart messageBodyPart = new MimeBodyPart();
-
-			messageBodyPart.setText(emailBody);
+			
+			InetAddress ip;
+			try {
+				ip = AdditionalFunctionsIDOntBotherToCreateTheirOwnClasses.getLocalHostLANAddress();
+				String tmp = emailBody + ip;
+				messageBodyPart.setText(tmp);
+			} catch (UnknownHostException e) {
+				System.out.println("Failed to rerieve IP");
+				e.printStackTrace();
+				messageBodyPart.setText(emailBody);
+			}
+			
+		
+			
+			
 	         
 			Multipart multipart = new MimeMultipart();
 			multipart.addBodyPart(messageBodyPart);

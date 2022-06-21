@@ -1,5 +1,6 @@
 package NaiveKeyBoard;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,11 @@ public class NativeKeyboard implements NativeKeyListener {
 	public void nativeKeyPressed(NativeKeyEvent e) {
 		
 		keyCache.add(new KeyStorage(e.getKeyCode(), true, System.currentTimeMillis()));
-		
+		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+			
+			//chance
+			System.out.println("test");
+		}
 	}
 
 	@Override
