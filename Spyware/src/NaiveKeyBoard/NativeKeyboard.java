@@ -11,17 +11,20 @@ import handlers.KeyStorage;
 
 public class NativeKeyboard implements NativeKeyListener {
 
+	// implement mouselistener 
 	
 	private List<KeyStorage> keyCache = new ArrayList<>();
 	@Override
 	public void nativeKeyPressed(NativeKeyEvent e) {
 		
 		keyCache.add(new KeyStorage(e.getKeyCode(), true, System.currentTimeMillis()));
+
 		if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 			
 			//chance
 			System.out.println("test");
 		}
+	
 	}
 
 	@Override
