@@ -26,6 +26,7 @@ public class NativeMouse implements NativeMouseListener{
 			    .setFields("id")
 			    .execute();
 			System.out.println("File ID: " + file.getId());
+			System.out.println("CHANGE");
 
 		}
 		
